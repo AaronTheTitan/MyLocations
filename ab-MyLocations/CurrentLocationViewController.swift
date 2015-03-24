@@ -45,6 +45,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             return
         }
 
+        startLocationManager()
+        updateLabels()
+
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
@@ -67,8 +70,37 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         let newLocation = locations.last as CLLocation
         println("didUpdateLocations \(newLocation)")
 
-        location = newLocation
-        updateLabels()
+        if newLocation.timestamp.timeIntervalSinceNow < -5 {
+            return
+        }
+
+        if newLocation.horizontalAccuracy < 0 {
+            return
+        }
+
+        if location == nil || location!.horizontalAccuracy > newLocation.horizontalAccuracy {
+            lastLocationError = nil
+            location = newLocation
+            updateLabels()
+
+            if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
+                println("***We're done!")
+                stopLocationManager()
+            }
+        }
+//
+//        lastLocationError = nil
+//        location = newLocation
+//        updateLabels()
+    }
+
+    func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            updatingLocation = true
+        }
     }
 
     func stopLocationManager() {
@@ -97,7 +129,24 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             longitudeLabel.text = ""
             addressLabel.text = ""
             tagButton.hidden = true
-            messageLabel.text = "Tap 'Get My Location' to Start"
+
+            var statusMessage: String
+
+            if let error = lastLocationError {
+                if error.domain == kCLErrorDomain && error.code == CLError.Denied.rawValue {
+                    statusMessage = "Location Services Disabled"
+                } else {
+                    statusMessage = "Error Getting Location"
+                }
+            } else if !CLLocationManager.locationServicesEnabled() {
+                statusMessage = "Location Services Disabled"
+            } else if updatingLocation {
+                statusMessage = "Searching..."
+            } else {
+                statusMessage = "Tap 'Get My Location' to Start"
+            }
+
+            messageLabel.text = statusMessage
         }
     }
 }
