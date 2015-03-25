@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class LocationDetailsViewController: UITableViewController {
 
-//    var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-//    var placemark: CLPlacemark?
+    var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    var placemark: CLPlacemark?
 
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -19,6 +20,33 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+
+    // MARK: - Load Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        descriptionTextView.text = ""
+        categoryLabel.text = ""
+
+        latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
+        longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
+
+        if let placemark = placemark {
+            addressLabel.text = stringFromPlacemark(placemark)
+        } else {
+            addressLabel.text = "No Address Found"
+        }
+
+        dateLabel.text = formatDate(NSDate())
+    }
+
+    // MARK: - Other Methods
+    func stringFromPlacemark(placemark: CLPlacemark) -> String {
+        return
+
+    }
+
+    // MARK: - IB Action Methods
 
     @IBAction func done() {
         dismissViewControllerAnimated(true, completion: nil)

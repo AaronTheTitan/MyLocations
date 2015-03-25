@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailsViewController.swift; path = "ab-MyLocations/LocationDetailsViewController.swift"; sourceTree = "<group>"; };
+		915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		91CD6E551AC0E892000100DC /* ab-MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ab-MyLocations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD6E591AC0E892000100DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91CD6E5A1AC0E892000100DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,10 +60,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		915DD6391AC341B100CDFCE1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91CD6E5C1AC0E892000100DC /* CurrentLocationViewController.swift */,
+				915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */,
+				91CD6E5E1AC0E892000100DC /* SecondViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		915DD63A1AC341C000CDFCE1 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				91CD6E5A1AC0E892000100DC /* AppDelegate.swift */,
+				91CD6E631AC0E892000100DC /* Images.xcassets */,
+				91CD6E651AC0E892000100DC /* LaunchScreen.xib */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
 		91CD6E4C1AC0E892000100DC = {
 			isa = PBXGroup;
 			children = (
-				915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */,
 				91CD6E571AC0E892000100DC /* ab-MyLocations */,
 				91CD6E6F1AC0E892000100DC /* ab-MyLocationsTests */,
 				91CD6E561AC0E892000100DC /* Products */,
@@ -82,12 +101,9 @@
 		91CD6E571AC0E892000100DC /* ab-MyLocations */ = {
 			isa = PBXGroup;
 			children = (
-				91CD6E5A1AC0E892000100DC /* AppDelegate.swift */,
-				91CD6E5C1AC0E892000100DC /* CurrentLocationViewController.swift */,
-				91CD6E5E1AC0E892000100DC /* SecondViewController.swift */,
 				91CD6E601AC0E892000100DC /* Main.storyboard */,
-				91CD6E631AC0E892000100DC /* Images.xcassets */,
-				91CD6E651AC0E892000100DC /* LaunchScreen.xib */,
+				915DD6391AC341B100CDFCE1 /* View Controllers */,
+				915DD63A1AC341C000CDFCE1 /* Default */,
 				91CD6E581AC0E892000100DC /* Supporting Files */,
 			);
 			path = "ab-MyLocations";
