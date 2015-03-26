@@ -88,8 +88,10 @@ class LocationDetailsViewController: UITableViewController {
     // MARK: - IB Action Methods
 
     @IBAction func done() {
-        println("Description '\(descriptionText)'")
-        dismissViewControllerAnimated(true, completion: nil)
+        let hudView = HudView.hudInView(navigationController!.view, animated: true)
+        hudView.text = "Tagged"
+
+//        dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func cancel() {
