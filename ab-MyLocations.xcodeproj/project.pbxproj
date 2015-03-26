@@ -15,6 +15,7 @@
 		91CD6E641AC0E892000100DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91CD6E631AC0E892000100DC /* Images.xcassets */; };
 		91CD6E671AC0E892000100DC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91CD6E651AC0E892000100DC /* LaunchScreen.xib */; };
 		91CD6E731AC0E892000100DC /* ab_MyLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E721AC0E892000100DC /* ab_MyLocationsTests.swift */; };
+		91CD6E7D1AC38346000100DC /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E7C1AC38346000100DC /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		91CD6E6C1AC0E892000100DC /* ab-MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ab-MyLocationsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD6E711AC0E892000100DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91CD6E721AC0E892000100DC /* ab_MyLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ab_MyLocationsTests.swift; sourceTree = "<group>"; };
+		91CD6E7C1AC38346000100DC /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryPickerViewController.swift; path = "ab-MyLocations/CategoryPickerViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		91CD6E4C1AC0E892000100DC = {
 			isa = PBXGroup;
 			children = (
+				91CD6E7C1AC38346000100DC /* CategoryPickerViewController.swift */,
 				91CD6E571AC0E892000100DC /* ab-MyLocations */,
 				91CD6E6F1AC0E892000100DC /* ab-MyLocationsTests */,
 				91CD6E561AC0E892000100DC /* Products */,
@@ -237,6 +240,7 @@
 				915DD6381AC3383400CDFCE1 /* LocationDetailsViewController.swift in Sources */,
 				91CD6E5F1AC0E892000100DC /* SecondViewController.swift in Sources */,
 				91CD6E5B1AC0E892000100DC /* AppDelegate.swift in Sources */,
+				91CD6E7D1AC38346000100DC /* CategoryPickerViewController.swift in Sources */,
 				91CD6E5D1AC0E892000100DC /* CurrentLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
