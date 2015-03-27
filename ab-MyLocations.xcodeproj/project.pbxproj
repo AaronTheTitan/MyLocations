@@ -17,6 +17,7 @@
 		91CD6E731AC0E892000100DC /* ab_MyLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E721AC0E892000100DC /* ab_MyLocationsTests.swift */; };
 		91CD6E7D1AC38346000100DC /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E7C1AC38346000100DC /* CategoryPickerViewController.swift */; };
 		91F764601AC4721B006B5ECD /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F7645F1AC4721B006B5ECD /* HudView.swift */; };
+		91F764621AC5B573006B5ECD /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F764611AC5B573006B5ECD /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		91CD6E721AC0E892000100DC /* ab_MyLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ab_MyLocationsTests.swift; sourceTree = "<group>"; };
 		91CD6E7C1AC38346000100DC /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryPickerViewController.swift; path = "ab-MyLocations/CategoryPickerViewController.swift"; sourceTree = "<group>"; };
 		91F7645F1AC4721B006B5ECD /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HudView.swift; path = "ab-MyLocations/HudView.swift"; sourceTree = "<group>"; };
+		91F764611AC5B573006B5ECD /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = "ab-MyLocations/Functions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				91CD6E7C1AC38346000100DC /* CategoryPickerViewController.swift */,
 				91F7645F1AC4721B006B5ECD /* HudView.swift */,
+				91F764611AC5B573006B5ECD /* Functions.swift */,
 				91CD6E571AC0E892000100DC /* ab-MyLocations */,
 				91CD6E6F1AC0E892000100DC /* ab-MyLocationsTests */,
 				91CD6E561AC0E892000100DC /* Products */,
@@ -243,6 +246,7 @@
 				915DD6381AC3383400CDFCE1 /* LocationDetailsViewController.swift in Sources */,
 				91CD6E5F1AC0E892000100DC /* SecondViewController.swift in Sources */,
 				91F764601AC4721B006B5ECD /* HudView.swift in Sources */,
+				91F764621AC5B573006B5ECD /* Functions.swift in Sources */,
 				91CD6E5B1AC0E892000100DC /* AppDelegate.swift in Sources */,
 				91CD6E7D1AC38346000100DC /* CategoryPickerViewController.swift in Sources */,
 				91CD6E5D1AC0E892000100DC /* CurrentLocationViewController.swift in Sources */,
