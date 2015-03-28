@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+//import CoreData
 
 private let dateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
