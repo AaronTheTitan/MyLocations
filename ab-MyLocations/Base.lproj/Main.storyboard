@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="395" y="-277"/>
+            <point key="canvasLocation" x="638" y="-272"/>
         </scene>
         <!--Tag Location-->
         <scene sceneID="NzW-b9-qEp">
@@ -280,7 +280,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nya-Ui-nkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="-277"/>
+            <point key="canvasLocation" x="1646" y="-30"/>
         </scene>
         <!--Category Picker View Controller-->
         <scene sceneID="zA4-FB-Gia">
@@ -319,7 +319,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQd-xd-1Gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="v6D-lB-7qj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1524" y="-280"/>
+            <point key="canvasLocation" x="2012" y="-33"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -356,18 +356,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAF-4k-S0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778" y="-277"/>
+            <point key="canvasLocation" x="1266" y="-30"/>
         </scene>
         <!--Locations-->
         <scene sceneID="0GY-G7-3H9">
             <objects>
-                <tableViewController id="jfW-lt-R5x" customClass="LocationsViewController" sceneMemberID="viewController">
+                <tableViewController id="jfW-lt-R5x" customClass="LocationsViewController" customModule="ab_MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" id="R7X-D0-vbq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="Mdd-yd-956">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="Mdd-yd-956" customClass="LocationCell" customModule="ab_MyLocations" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mdd-yd-956" id="PZh-CI-bO1">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -388,6 +388,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="bLJ-hZ-cqW" id="J8V-Hc-fa7"/>
+                                    <outlet property="descriptionLabel" destination="cgD-9Z-e0v" id="Pg2-DB-bGj"/>
+                                    <segue destination="3cV-jr-sZT" kind="modal" identifier="EditLocation" id="8Zd-6O-bWE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -399,7 +404,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KyH-F3-HrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="368"/>
+            <point key="canvasLocation" x="831" y="367"/>
         </scene>
         <!--Locations-->
         <scene sceneID="9RB-jj-u3x">
@@ -416,7 +421,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijR-OA-bxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="395" y="368"/>
+            <point key="canvasLocation" x="443" y="367"/>
         </scene>
     </scenes>
     <resources>
@@ -427,4 +432,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Ny-Bn-V2c"/>
+    </inferredMetricsTieBreakers>
 </document>

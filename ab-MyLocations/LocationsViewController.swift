@@ -13,26 +13,43 @@ import CoreLocation
 class LocationsViewController: UITableViewController {
 
     var managedObjectContext: NSManagedObjectContext!
+    var locations = [Location]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let fetchRequest = NSFetchRequest()
+        let entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: managedObjectContext)
+        fetchRequest.entity = entity
+
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        var error: NSError?
+        let foundObjects = managedObjectContext.executeFetchRequest(fetchRequest, error: &error)
+
+        if foundObjects == nil {
+            fatalCoreDataError(error)
+            return
+        }
+
+        locations = foundObjects as [Location]
 
     }
 
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locations.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell") as UITableViewCell
-        let descriptionLabel = cell.viewWithTag(100) as UILabel
-        descriptionLabel.text = "If you can see this"
 
-        let addresLabel = cell.viewWithTag(101) as UILabel
-        addresLabel.text = "Then it works!"
+        let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell") as LocationCell
+        let location = locations[indexPath.row]
+
+        cell.configureForLocation(location)
 
         return cell
     }
