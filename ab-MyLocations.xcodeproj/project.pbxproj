@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		915DD6381AC3383400CDFCE1 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */; };
+		9167EAD41AC89D0100C8089E /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167EAD31AC89D0100C8089E /* LocationsViewController.swift */; };
 		91CD6E5B1AC0E892000100DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E5A1AC0E892000100DC /* AppDelegate.swift */; };
 		91CD6E5D1AC0E892000100DC /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E5C1AC0E892000100DC /* CurrentLocationViewController.swift */; };
 		91CD6E5F1AC0E892000100DC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E5E1AC0E892000100DC /* SecondViewController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		9167EAD31AC89D0100C8089E /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = "ab-MyLocations/LocationsViewController.swift"; sourceTree = "<group>"; };
 		91CD6E551AC0E892000100DC /* ab-MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ab-MyLocations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD6E591AC0E892000100DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91CD6E5A1AC0E892000100DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		91CD6E4C1AC0E892000100DC = {
 			isa = PBXGroup;
 			children = (
+				9167EAD31AC89D0100C8089E /* LocationsViewController.swift */,
 				91F7645F1AC4721B006B5ECD /* HudView.swift */,
 				91F764611AC5B573006B5ECD /* Functions.swift */,
 				91F764631AC61DC4006B5ECD /* DataModel.xcdatamodeld */,
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				915DD6381AC3383400CDFCE1 /* LocationDetailsViewController.swift in Sources */,
+				9167EAD41AC89D0100C8089E /* LocationsViewController.swift in Sources */,
 				91F764651AC61DC4006B5ECD /* DataModel.xcdatamodeld in Sources */,
 				91CD6E5F1AC0E892000100DC /* SecondViewController.swift in Sources */,
 				91F764601AC4721B006B5ECD /* HudView.swift in Sources */,
