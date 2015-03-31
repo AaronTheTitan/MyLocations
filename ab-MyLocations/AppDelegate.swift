@@ -90,6 +90,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let currentLocationViewController = tabBarViewControllers[0] as CurrentLocationViewController
             currentLocationViewController.managedObjectContext = managedObjectContext
+
+            // pass the context object to the MapViewController too
+            let mapViewController = tabBarViewControllers[2] as MapViewController
+            mapViewController.managedObjectContext = managedObjectContext
         }
 
         listenForFatalCoreDataNotifications()

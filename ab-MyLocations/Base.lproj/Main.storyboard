@@ -321,6 +321,51 @@
             </objects>
             <point key="canvasLocation" x="2012" y="-33"/>
         </scene>
+        <!--Map-->
+        <scene sceneID="Zcv-tS-xik">
+            <objects>
+                <viewController id="MLV-xa-WEB" customClass="MapViewController" customModule="ab_MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gLy-Yp-kYf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="hhp-5F-9KM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MLV-xa-WEB" id="bm0-2P-5ij"/>
+                                </connections>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" id="Rb4-26-Xt7">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Map" id="3dq-ab-nnw">
+                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="YAh-uO-pRn">
+                                            <connections>
+                                                <action selector="showLocations" destination="MLV-xa-WEB" id="0Vm-Jd-BUn"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="User" id="3Fg-07-EZt">
+                                            <connections>
+                                                <action selector="showUser" destination="MLV-xa-WEB" id="F0B-sf-97v"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="QSh-Cw-X7z"/>
+                    <connections>
+                        <outlet property="mapView" destination="hhp-5F-9KM" id="inz-np-Vc8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yjF-MV-CwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="994"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -334,6 +379,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="y2Q-in-pBJ" kind="relationship" relationship="viewControllers" id="56c-RG-lAE"/>
+                        <segue destination="MLV-xa-WEB" kind="relationship" relationship="viewControllers" id="MgP-nu-hnF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

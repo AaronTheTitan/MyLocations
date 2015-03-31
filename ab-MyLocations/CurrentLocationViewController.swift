@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import CoreData
+//import MapKit
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91022F601ACB025E005F3827 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91022F5F1ACB025E005F3827 /* MapKit.framework */; };
+		91022F621ACB04A5005F3827 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91022F611ACB04A5005F3827 /* MapViewController.swift */; };
 		915DD6381AC3383400CDFCE1 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */; };
 		9167EAD41AC89D0100C8089E /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167EAD31AC89D0100C8089E /* LocationsViewController.swift */; };
 		9167EAD61AC8A10D00C8089E /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167EAD51AC8A10C00C8089E /* LocationCell.swift */; };
@@ -35,8 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91022F5F1ACB025E005F3827 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		91022F611ACB04A5005F3827 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
-		9167EAD31AC89D0100C8089E /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsViewController.swift; path = "ab-MyLocations/LocationsViewController.swift"; sourceTree = "<group>"; };
+		9167EAD31AC89D0100C8089E /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		9167EAD51AC8A10C00C8089E /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = "ab-MyLocations/LocationCell.swift"; sourceTree = "<group>"; };
 		91CD6E551AC0E892000100DC /* ab-MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ab-MyLocations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD6E591AC0E892000100DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91022F601ACB025E005F3827 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +82,10 @@
 		915DD6391AC341B100CDFCE1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9167EAD31AC89D0100C8089E /* LocationsViewController.swift */,
 				91CD6E7C1AC38346000100DC /* CategoryPickerViewController.swift */,
 				91CD6E5C1AC0E892000100DC /* CurrentLocationViewController.swift */,
+				91022F611ACB04A5005F3827 /* MapViewController.swift */,
 				915DD6371AC3383400CDFCE1 /* LocationDetailsViewController.swift */,
 				91CD6E5E1AC0E892000100DC /* SecondViewController.swift */,
 			);
@@ -98,8 +105,8 @@
 		91CD6E4C1AC0E892000100DC = {
 			isa = PBXGroup;
 			children = (
+				91022F5F1ACB025E005F3827 /* MapKit.framework */,
 				9167EAD51AC8A10C00C8089E /* LocationCell.swift */,
-				9167EAD31AC89D0100C8089E /* LocationsViewController.swift */,
 				91F7645F1AC4721B006B5ECD /* HudView.swift */,
 				91F764611AC5B573006B5ECD /* Functions.swift */,
 				91F764631AC61DC4006B5ECD /* DataModel.xcdatamodeld */,
@@ -262,6 +269,7 @@
 				91CD6E5F1AC0E892000100DC /* SecondViewController.swift in Sources */,
 				91F764601AC4721B006B5ECD /* HudView.swift in Sources */,
 				91F764621AC5B573006B5ECD /* Functions.swift in Sources */,
+				91022F621ACB04A5005F3827 /* MapViewController.swift in Sources */,
 				91CD6E5B1AC0E892000100DC /* AppDelegate.swift in Sources */,
 				91CD6E7D1AC38346000100DC /* CategoryPickerViewController.swift in Sources */,
 				91F764671AC61FF1006B5ECD /* Location.swift in Sources */,
@@ -389,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ab-MyLocations/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -399,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ab-MyLocations/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
