@@ -353,6 +353,9 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="MLV-xa-WEB" id="HTU-Ew-nc1"/>
+                                </connections>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -360,11 +363,12 @@
                     <tabBarItem key="tabBarItem" title="Map" id="QSh-Cw-X7z"/>
                     <connections>
                         <outlet property="mapView" destination="hhp-5F-9KM" id="inz-np-Vc8"/>
+                        <segue destination="3cV-jr-sZT" kind="modal" identifier="EditLocation" id="LaP-ew-3no"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjF-MV-CwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="450" y="994"/>
+            <point key="canvasLocation" x="831" y="1053"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -479,6 +483,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5Ny-Bn-V2c"/>
+        <segue reference="LaP-ew-3no"/>
     </inferredMetricsTieBreakers>
 </document>
