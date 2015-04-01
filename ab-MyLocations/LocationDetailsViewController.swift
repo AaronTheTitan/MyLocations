@@ -55,6 +55,11 @@ class LocationDetailsViewController: UITableViewController {
 
         if let location = locationToEdit {
             title = "Edit Location"
+            if location.hasPhoto {
+                if let image = location.photoImage {
+                    showImage(image)
+                }
+            }
         }
 
         descriptionTextView.text = descriptionText
@@ -152,7 +157,9 @@ class LocationDetailsViewController: UITableViewController {
 
             hudView.text = "Tagged"
             location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as Location
+            location.photoID = nil
         }
+
 
         location.locationDescription = descriptionText
         location.category = categoryName
@@ -160,6 +167,19 @@ class LocationDetailsViewController: UITableViewController {
         location.longitude = coordinate.longitude
         location.date = date
         location.placemark = placemark
+
+        if let image = image {
+            if !location.hasPhoto {
+                location.photoID = Location.nextPhotoID()
+            }
+
+            let data = UIImageJPEGRepresentation(image, 0.5)
+
+            var error: NSError?
+            if !data.writeToFile(location.photoPath, options: .DataWritingAtomic, error: &error) {
+                println("Error writing file: \(error)")
+            }
+        }
 
         var error: NSError?
         if !managedObjectContext.save(&error) {
