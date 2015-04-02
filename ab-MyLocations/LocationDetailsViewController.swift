@@ -106,13 +106,18 @@ class LocationDetailsViewController: UITableViewController {
     }
 
     // MARK: - Other Methods
-    func stringFromPlacemark(placemark: CLPlacemark) -> String {
-        return
-            "\(placemark.subThoroughfare) \(placemark.thoroughfare)," +
-            "\(placemark.locality), " +
-            "\(placemark.administrativeArea) \(placemark.postalCode)," +
-            "\(placemark.country)"
 
+    func stringFromPlacemark(placemark: CLPlacemark) -> String {
+
+        var line = ""
+        line.addText(placemark.subThoroughfare)
+        line.addText(placemark.thoroughfare, withSeparator: " ")
+        line.addText(placemark.locality, withSeparator: ", ")
+        line.addText(placemark.administrativeArea, withSeparator: ", ")
+        line.addText(placemark.postalCode, withSeparator: " ")
+        line.addText(placemark.country, withSeparator: ", ")
+
+        return line
     }
 
     func showImage(image: UIImage) {
