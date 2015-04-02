@@ -80,7 +80,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tag" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Tag" image="Tag" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="addressLabel" destination="8Jj-yg-XOg" id="vXv-Hu-UVr"/>
                         <outlet property="getButton" destination="CiT-pt-2HW" id="uXM-HL-0kc"/>
@@ -350,12 +350,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Map" id="3dq-ab-nnw">
-                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="YAh-uO-pRn">
+                                        <barButtonItem key="leftBarButtonItem" image="Pin" id="YAh-uO-pRn">
                                             <connections>
                                                 <action selector="showLocations" destination="MLV-xa-WEB" id="0Vm-Jd-BUn"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="User" id="3Fg-07-EZt">
+                                        <barButtonItem key="rightBarButtonItem" image="User" id="3Fg-07-EZt">
                                             <connections>
                                                 <action selector="showUser" destination="MLV-xa-WEB" id="F0B-sf-97v"/>
                                             </connections>
@@ -369,7 +369,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="QSh-Cw-X7z"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="QSh-Cw-X7z"/>
                     <connections>
                         <outlet property="mapView" destination="hhp-5F-9KM" id="inz-np-Vc8"/>
                         <segue destination="3cV-jr-sZT" kind="modal" identifier="EditLocation" id="LaP-ew-3no"/>
@@ -379,10 +379,10 @@
             </objects>
             <point key="canvasLocation" x="831" y="1053"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MyTabBarController" customModule="ab_MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -445,7 +445,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nQU-xa-xDi">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nQU-xa-xDi">
                                             <rect key="frame" x="15" y="2" width="52" height="52"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -473,8 +473,8 @@
         <!--Locations-->
         <scene sceneID="9RB-jj-u3x">
             <objects>
-                <navigationController id="y2Q-in-pBJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" id="JgQ-Qm-ZxV"/>
+                <navigationController id="y2Q-in-pBJ" customClass="MyNavigationController" customModule="ab_MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="JgQ-Qm-ZxV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tb4-g7-UIO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -489,7 +489,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Locations" width="30" height="30"/>
+        <image name="Map" width="30" height="30"/>
+        <image name="Pin" width="24" height="24"/>
+        <image name="Tag" width="30" height="30"/>
+        <image name="User" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -497,7 +501,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5Ny-Bn-V2c"/>
+        <segue reference="8Zd-6O-bWE"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.93333333333333335" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
 </document>
