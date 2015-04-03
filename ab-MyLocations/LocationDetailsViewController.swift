@@ -65,6 +65,19 @@ class LocationDetailsViewController: UITableViewController {
         descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
 
+        tableView.backgroundColor = UIColor.blackColor()
+        tableView.separatorColor = UIColor(white: 1.0, alpha: 0.2)
+        tableView.indicatorStyle = .White
+
+        descriptionTextView.textColor = UIColor.whiteColor()
+        descriptionTextView.backgroundColor = UIColor.blackColor()
+
+        addPhotoLabel.textColor = UIColor.whiteColor()
+        addPhotoLabel.highlightedTextColor = addPhotoLabel.textColor
+
+        addressLabel.textColor = UIColor(white: 1.0, alpha: 0.4)
+        addressLabel.highlightedTextColor = addressLabel.textColor
+
         latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
         longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
 
@@ -218,7 +231,7 @@ class LocationDetailsViewController: UITableViewController {
         case (1, _):
             return imageView.hidden ? 44: 280
         case (2, 2):
-            addressLabel.frame.size = CGSize(width: view.bounds.size.width - 115, height: 10000)
+            addressLabel.frame.size = CGSize(width: view.bounds.size.width - 115, height: 100)
             addressLabel.frame.origin.x = view.bounds.size.width - addressLabel.frame.size.width - 15
             return addressLabel.frame.size.height + 20
 
@@ -241,6 +254,30 @@ class LocationDetailsViewController: UITableViewController {
         } else if indexPath.section == 1 && indexPath.row == 0 {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             pickPhoto()
+        }
+    }
+
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.blackColor()
+
+        if let textLabel = cell.textLabel {
+            textLabel.textColor = UIColor.whiteColor()
+            textLabel.highlightedTextColor = textLabel.textColor
+        }
+
+        if let detailLabel = cell.detailTextLabel {
+            detailLabel.textColor = UIColor(white: 1.0, alpha: 0.4)
+            detailLabel.highlightedTextColor = detailLabel.textColor
+        }
+
+        let selectionView = UIView(frame: CGRect.zeroRect)
+        selectionView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
+        cell.selectedBackgroundView = selectionView
+
+        if indexPath.row == 2 {
+            let addressLabel = cell.viewWithTag(100) as UILabel
+            addressLabel.textColor = UIColor.whiteColor()
+            addressLabel.highlightedTextColor = addressLabel.textColor
         }
     }
 

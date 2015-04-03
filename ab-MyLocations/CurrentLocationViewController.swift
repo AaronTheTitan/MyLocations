@@ -19,6 +19,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var tagButton: UIButton!
     @IBOutlet weak var getButton: UIButton!
+    @IBOutlet weak var latitudeTextLabel: UILabel!
+    @IBOutlet weak var longitudeTextLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
 
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
@@ -194,6 +197,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             tagButton.hidden = false
             messageLabel.text = ""
 
+            latitudeTextLabel.hidden = false
+            longitudeTextLabel.hidden = false
+
             if let placemark = placemark {
                 addressLabel.text = stringFromPlacemark(placemark)
             } else if performingReverseGeocoding {
@@ -209,6 +215,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             longitudeLabel.text = ""
             addressLabel.text = ""
             tagButton.hidden = true
+
+            latitudeTextLabel.hidden = true
+            longitudeTextLabel.hidden = true
 
             var statusMessage: String
 
