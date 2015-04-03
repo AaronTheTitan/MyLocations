@@ -22,7 +22,6 @@
 		91CD6E5D1AC0E892000100DC /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E5C1AC0E892000100DC /* CurrentLocationViewController.swift */; };
 		91CD6E621AC0E892000100DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CD6E601AC0E892000100DC /* Main.storyboard */; };
 		91CD6E641AC0E892000100DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91CD6E631AC0E892000100DC /* Images.xcassets */; };
-		91CD6E671AC0E892000100DC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91CD6E651AC0E892000100DC /* LaunchScreen.xib */; };
 		91CD6E731AC0E892000100DC /* ab_MyLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E721AC0E892000100DC /* ab_MyLocationsTests.swift */; };
 		91CD6E7D1AC38346000100DC /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD6E7C1AC38346000100DC /* CategoryPickerViewController.swift */; };
 		91F764601AC4721B006B5ECD /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F7645F1AC4721B006B5ECD /* HudView.swift */; };
@@ -59,7 +58,6 @@
 		91CD6E5C1AC0E892000100DC /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		91CD6E611AC0E892000100DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91CD6E631AC0E892000100DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		91CD6E661AC0E892000100DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		91CD6E6C1AC0E892000100DC /* ab-MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ab-MyLocationsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD6E711AC0E892000100DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91CD6E721AC0E892000100DC /* ab_MyLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ab_MyLocationsTests.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 			children = (
 				91CD6E5A1AC0E892000100DC /* AppDelegate.swift */,
 				91CD6E631AC0E892000100DC /* Images.xcassets */,
-				91CD6E651AC0E892000100DC /* LaunchScreen.xib */,
 			);
 			name = Default;
 			sourceTree = "<group>";
@@ -266,7 +263,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CD6E621AC0E892000100DC /* Main.storyboard in Resources */,
-				91CD6E671AC0E892000100DC /* LaunchScreen.xib in Resources */,
 				91CD6E641AC0E892000100DC /* Images.xcassets in Resources */,
 				91A87AED1ACEF6910007B3D6 /* Sound.caf in Resources */,
 			);
@@ -330,14 +326,6 @@
 				91CD6E611AC0E892000100DC /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		91CD6E651AC0E892000100DC /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				91CD6E661AC0E892000100DC /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -424,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "ab-MyLocations/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -435,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "ab-MyLocations/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
