@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import CoreData
-//import MapKit
+import QuartzCore
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -34,6 +34,17 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     var performingReverseGeocoding = false
     var lastGeocodingError: NSError?
     var timer: NSTimer?
+    var logoVisible = false
+
+    lazy var logoButton: UIButton = {
+        let button = UIButton.buttonWithType(.Custom) as UIButton
+        button.setBackgroundImage(UIImage(named: "Logo"), forState: .Normal)
+        button.sizeToFit()
+        button.addTarget(self, action: Selector("getLocation"), forControlEvents: .TouchUpInside)
+        button.center.x = CGRectGetMidX(self.view.bounds)
+        button.center.y = 220
+        return button
+    }()
 
 
     // MARK: - BEGIN CODE ----------------------------/
@@ -42,6 +53,66 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         updateLabels()
         configureGetButton()
     }
+
+    func showLogoView() {
+        if !logoVisible {
+            logoVisible = true
+            containerView.hidden = true
+            view.addSubview(logoButton)
+        }
+    }
+
+    func hideLogoView() {
+        if !logoVisible { return }
+
+        logoVisible = false
+        containerView.hidden = false
+
+        containerView.center.x = view.bounds.size.width * 2
+        containerView.center.y = 40 + containerView.bounds.size.height / 2
+
+        let centerX = CGRectGetMidX(view.bounds)
+
+        let panelMover = CABasicAnimation(keyPath: "position")
+        panelMover.removedOnCompletion = false
+        panelMover.fillMode = kCAFillModeForwards
+        panelMover.duration = 0.6
+        panelMover.fromValue = NSValue(CGPoint: containerView.center)
+        panelMover.toValue = NSValue(CGPoint: CGPoint(x: centerX, y: containerView.center.y))
+        panelMover.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        panelMover.delegate = self
+        containerView.layer.addAnimation(panelMover, forKey: "panelMover")
+
+        let logoMover = CABasicAnimation(keyPath: "position")
+        logoMover.removedOnCompletion = false
+        logoMover.fillMode = kCAFillModeForwards
+        logoMover.duration = 0.5
+        logoMover.fromValue = NSValue(CGPoint: logoButton.center)
+        logoMover.toValue = NSValue(CGPoint: CGPoint(x: -centerX, y: logoButton.center.y))
+        logoMover.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+
+        logoButton.layer.addAnimation(logoMover, forKey: "logoMover")
+
+        let logoRotator = CABasicAnimation(keyPath: "transform.rotation.z")
+        logoRotator.removedOnCompletion = false
+        logoRotator.fillMode = kCAFillModeForwards
+        logoRotator.duration = 0.5
+        logoRotator.fromValue = 0.0
+        logoRotator.toValue = -2 * M_PI
+        logoRotator.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        logoButton.layer.addAnimation(logoRotator, forKey: "logoRotator")
+
+    }
+
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        containerView.layer.removeAllAnimations()
+        containerView.center.x = view.bounds.size.width / 2
+        containerView.center.y = 40 + containerView.bounds.size.height / 2
+
+        logoButton.layer.removeAllAnimations()
+        logoButton.removeFromSuperview()
+    }
+
 
     @IBAction func getLocation() {
 
@@ -73,6 +144,10 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
+
+        if logoVisible {
+            hideLogoView()
+        }
     }
 
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -91,7 +166,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
 
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         let newLocation = locations.last as CLLocation
-        println("didUpdateLocations \(newLocation)")
+//        println("didUpdateLocations \(newLocation)")
 
         if newLocation.timestamp.timeIntervalSinceNow < -5 {
             return
@@ -112,7 +187,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             updateLabels()
 
             if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
-                println("***We're done!")
+//                println("***We're done!")
                 stopLocationManager()
                 configureGetButton()
 
@@ -122,7 +197,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             }
 
             if !performingReverseGeocoding {
-                println("*** Going to geocode")
+//                println("*** Going to geocode")
                 performingReverseGeocoding = true
                 geocoder.reverseGeocodeLocation(location, completionHandler: { placemarks, error in
                     self.lastGeocodingError = error
@@ -232,7 +307,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             } else if updatingLocation {
                 statusMessage = "Searching..."
             } else {
-                statusMessage = "Tap 'Get My Location' to Start"
+                statusMessage = ""
+                showLogoView()
             }
 
             messageLabel.text = statusMessage

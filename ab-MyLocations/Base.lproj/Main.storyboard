@@ -90,6 +90,7 @@
                     <tabBarItem key="tabBarItem" title="Tag" image="Tag" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="addressLabel" destination="8Jj-yg-XOg" id="vXv-Hu-UVr"/>
+                        <outlet property="containerView" destination="BAv-OC-78l" id="0Dl-o4-pUL"/>
                         <outlet property="getButton" destination="CiT-pt-2HW" id="uXM-HL-0kc"/>
                         <outlet property="latitudeLabel" destination="Z3o-MR-wMP" id="rL7-un-aWs"/>
                         <outlet property="latitudeTextLabel" destination="aFL-6H-Skc" id="AZl-GC-3uY"/>
