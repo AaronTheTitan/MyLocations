@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
 
                 let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-                let documentsDirectory = urls[0] as NSURL
+                let documentsDirectory = urls[0] as! NSURL
                 let storeURL = documentsDirectory.URLByAppendingPathComponent("DataStore.sqlite")
 
                 var error: NSError?
@@ -93,19 +93,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         customizeAppearance()
 
-        let tabBarController = window!.rootViewController as UITabBarController
+        let tabBarController = window!.rootViewController as! UITabBarController
 
         if let tabBarViewControllers = tabBarController.viewControllers {
 
-            let navigationController = tabBarViewControllers[1] as UINavigationController
-            let locationsViewController = navigationController.viewControllers[0] as LocationsViewController
+            let navigationController = tabBarViewControllers[1] as! UINavigationController
+            let locationsViewController = navigationController.viewControllers[0] as! LocationsViewController
             locationsViewController.managedObjectContext = managedObjectContext
             
-            let currentLocationViewController = tabBarViewControllers[0] as CurrentLocationViewController
+            let currentLocationViewController = tabBarViewControllers[0] as! CurrentLocationViewController
             currentLocationViewController.managedObjectContext = managedObjectContext
 
             // pass the context object to the MapViewController too
-            let mapViewController = tabBarViewControllers[2] as MapViewController
+            let mapViewController = tabBarViewControllers[2] as! MapViewController
             mapViewController.managedObjectContext = managedObjectContext
         }
 

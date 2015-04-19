@@ -39,7 +39,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     var soundID: SystemSoundID = 0
 
     lazy var logoButton: UIButton = {
-        let button = UIButton.buttonWithType(.Custom) as UIButton
+        let button = UIButton.buttonWithType(.Custom) as! UIButton
         button.setBackgroundImage(UIImage(named: "Logo"), forState: .Normal)
         button.sizeToFit()
         button.addTarget(self, action: Selector("getLocation"), forControlEvents: .TouchUpInside)
@@ -168,7 +168,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     }
 
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let newLocation = locations.last as CLLocation
+        let newLocation = locations.last as! CLLocation
 //        println("didUpdateLocations \(newLocation)")
 
         if newLocation.timestamp.timeIntervalSinceNow < -5 {
@@ -377,8 +377,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TagLocation" {
-            let navigationController = segue.destinationViewController as UINavigationController
-            let controller = navigationController.topViewController as LocationDetailsViewController
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsViewController
 
             controller.coordinate = location!.coordinate
             controller.placemark = placemark

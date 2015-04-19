@@ -174,7 +174,7 @@ class LocationDetailsViewController: UITableViewController {
         } else {
 
             hudView.text = "Tagged"
-            location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as Location
+            location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
             location.photoID = nil
         }
 
@@ -215,7 +215,7 @@ class LocationDetailsViewController: UITableViewController {
     }
 
     @IBAction func categoryPickerDidPickCategory(segue: UIStoryboardSegue) {
-        let controller = segue.sourceViewController as  CategoryPickerViewController
+        let controller = segue.sourceViewController as!  CategoryPickerViewController
         categoryName = controller.selectedCategoryName
         categoryLabel.text = categoryName
     }
@@ -275,7 +275,7 @@ class LocationDetailsViewController: UITableViewController {
         cell.selectedBackgroundView = selectionView
 
         if indexPath.row == 2 {
-            let addressLabel = cell.viewWithTag(100) as UILabel
+            let addressLabel = cell.viewWithTag(100) as! UILabel
             addressLabel.textColor = UIColor.whiteColor()
             addressLabel.highlightedTextColor = addressLabel.textColor
         }
@@ -287,7 +287,7 @@ class LocationDetailsViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         if segue.identifier == "PickCategory" {
-            let controller = segue.destinationViewController as CategoryPickerViewController
+            let controller = segue.destinationViewController as! CategoryPickerViewController
             controller.selectedCategoryName = categoryName
         }
     }
@@ -355,7 +355,7 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        image = info[UIImagePickerControllerEditedImage] as UIImage?
+        image = info[UIImagePickerControllerEditedImage] as! UIImage?
 
         if let image = image {
             showImage(image)
